@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".util.AndroidMPermissionActivity"
+            android:name="le.bluetooth.example.com.permissionlib.util.AndroidMPermissionActivity"
             android:exported="false"
             android:theme="@style/HalfTranslucentTheme"/>
     </application>

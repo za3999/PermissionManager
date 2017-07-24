@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.zhengcf.permissionmanager.util.AndroidMPermissionHelper;
+import le.bluetooth.example.com.permissionlib.util.AndroidMPermissionHelper;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

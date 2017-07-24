@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.zhengcf.permissionmanager.util;
+package le.bluetooth.example.com.permissionlib.util;
 
 import android.Manifest;
 import android.content.BroadcastReceiver;
@@ -13,9 +13,9 @@ import android.os.Build;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.Toast;
 
-import com.zhengcf.permissionmanager.R;
-
 import java.util.ArrayList;
+
+import le.bluetooth.example.com.permissionlib.R;
 
 /**
  * 权限管理Helper类
