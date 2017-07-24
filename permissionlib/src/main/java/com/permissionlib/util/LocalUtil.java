@@ -1,4 +1,4 @@
-package le.bluetooth.example.com.permissionlib.util;
+package com.permissionlib.util;
 
 import android.content.Context;
 import android.content.Intent;

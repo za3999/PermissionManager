@@ -1,7 +1,4 @@
-/**
- *
- */
-package le.bluetooth.example.com.permissionlib.util;
+package com.permissionlib.util;
 
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
@@ -14,10 +11,11 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 
+import com.permissionlib.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import le.bluetooth.example.com.permissionlib.R;
 
 /**
  * 权限拦截页面

@@ -1,7 +1,6 @@
-/**
+package com.permissionlib.util; /**
  *
  */
-package le.bluetooth.example.com.permissionlib.util;
 
 import android.Manifest;
 import android.content.BroadcastReceiver;
@@ -15,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import le.bluetooth.example.com.permissionlib.R;
+import com.permissionlib.R;
 
 /**
  * 权限管理Helper类
