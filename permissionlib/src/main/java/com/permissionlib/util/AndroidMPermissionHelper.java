@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.Toast;
 
@@ -129,7 +130,7 @@ public final class AndroidMPermissionHelper {
      */
     public static boolean isAllPermissionGranted(Context context, String... permissions) {
         for (int i = 0; i < permissions.length; i++) {
-            if (context.checkCallingOrSelfPermission(permissions[i]) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(context, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
                 return false;
             }
         }
@@ -195,7 +196,7 @@ public final class AndroidMPermissionHelper {
     private static String[] getDeniedPermission(Context context, String... permissions) {
         ArrayList<String> permissionList = new ArrayList<String>();
         for (int i = 0; i < permissions.length; i++) {
-            if (context.checkCallingOrSelfPermission(permissions[i]) == PackageManager.PERMISSION_DENIED) {
+            if (ActivityCompat.checkSelfPermission(context, permissions[i]) == PackageManager.PERMISSION_DENIED) {
                 permissionList.add(permissions[i]);
             }
         }
@@ -212,7 +213,7 @@ public final class AndroidMPermissionHelper {
     private static String[] getNotGrantedPermission(Context context, String... permissions) {
         ArrayList<String> permissionList = new ArrayList<String>();
         for (int i = 0; i < permissions.length; i++) {
-            if (context.checkCallingOrSelfPermission(permissions[i]) == PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(context, permissions[i]) == PackageManager.PERMISSION_GRANTED) {
                 continue;
             }
             permissionList.add(permissions[i]);
