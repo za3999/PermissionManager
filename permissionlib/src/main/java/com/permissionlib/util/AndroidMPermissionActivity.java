@@ -49,11 +49,11 @@ public class AndroidMPermissionActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (AndroidMPermissionHelper.REQUEST_CODE_ASK_PERMISSIONS == requestCode) {
-            boolean success = AndroidMPermissionHelper.isAllPermissionGranted(grantResults);
+            boolean success = AndroidMPermissionHelper.isAllPermissionGranted(this, permissions, grantResults);
             if (success) {
                 onPermissionResult(success);
             } else {
-                alertDialog = createPermissionDialog(AndroidMPermissionHelper.getNotGrantedPermission(permissions,
+                alertDialog = createPermissionDialog(AndroidMPermissionHelper.getNotGrantedPermission(this, permissions,
                         grantResults));
                 alertDialog.show();
             }
