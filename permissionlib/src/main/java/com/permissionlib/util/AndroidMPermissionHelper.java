@@ -194,6 +194,7 @@ public final class AndroidMPermissionHelper {
         Intent intent = new Intent(context, AndroidMPermissionActivity.class);
         intent.putExtra("permissions", permissions);
         intent.putExtra("code", code);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         final LocalBroadcastManager mLocalBroadcastManager = LocalBroadcastManager.getInstance(context);
         mLocalBroadcastManager.registerReceiver(new BroadcastReceiver() {
 
