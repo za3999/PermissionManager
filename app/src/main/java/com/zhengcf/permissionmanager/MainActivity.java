@@ -62,15 +62,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         AndroidMPermissionHelper.checkPermission(this, new AndroidMPermissionHelper.PermissionCallBack() {
-            @Override
-            public void onGranted() {
-                Toast.makeText(MainActivity.this, "相机权限请求成功", Toast.LENGTH_SHORT).show();
-            }
+                    @Override
+                    public void onGranted() {
+                        Toast.makeText(MainActivity.this, "权限请求成功", Toast.LENGTH_SHORT).show();
+                    }
 
-            @Override
-            public void onDenied() {
-                Toast.makeText(MainActivity.this, "相机权限请求失败", Toast.LENGTH_SHORT).show();
-            }
-        }, AndroidMPermissionHelper.PERMISSION_CAMERA);
+                    @Override
+                    public void onDenied() {
+                        Toast.makeText(MainActivity.this, "权限请求失败", Toast.LENGTH_SHORT).show();
+                    }
+                }, AndroidMPermissionHelper.PERMISSION_CAMERA,
+                AndroidMPermissionHelper.PERMISSION_PHONE_STATE,
+                AndroidMPermissionHelper.PERMISSION_GET_ACCOUNTS,
+                AndroidMPermissionHelper.PERMISSION_SMS);
     }
 }
