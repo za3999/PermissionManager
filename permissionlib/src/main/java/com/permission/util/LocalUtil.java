@@ -1,4 +1,4 @@
-package com.permissionlib.util;
+package com.permission.util;
 
 import android.content.Context;
 import android.content.Intent;

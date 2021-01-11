@@ -1,11 +1,11 @@
-package com.permissionlib;
+package com.permission;
 
 import android.content.Context;
 
-import com.caifu.common.permission.IPermissionService;
-import com.caifu.common.permission.PermissionCallBack;
+import com.cf.common.permission.IPermissionService;
+import com.cf.common.permission.PermissionCallBack;
 import com.google.auto.service.AutoService;
-import com.permissionlib.util.AndroidMPermissionHelper;
+import com.permission.util.AndroidMPermissionHelper;
 
 @AutoService(IPermissionService.class)
 public class PermissionServiceImp implements IPermissionService {

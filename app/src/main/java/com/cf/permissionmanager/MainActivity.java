@@ -1,4 +1,4 @@
-package com.zhengcf.permissionmanager;
+package com.cf.permissionmanager;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,10 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.caifu.common.ServiceManager;
-import com.caifu.common.permission.Constant;
-import com.caifu.common.permission.IPermissionService;
-import com.caifu.common.permission.PermissionCallBack;
+import com.cf.common.ServiceManager;
+import com.cf.common.permission.Constant;
+import com.cf.common.permission.IPermissionService;
+import com.cf.common.permission.PermissionCallBack;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {

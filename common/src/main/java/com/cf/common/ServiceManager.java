@@ -1,4 +1,4 @@
-package com.caifu.common;
+package com.cf.common;
 
 import java.util.Iterator;
 import java.util.ServiceLoader;

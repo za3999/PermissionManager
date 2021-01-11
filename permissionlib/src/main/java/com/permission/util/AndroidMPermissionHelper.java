@@ -1,8 +1,7 @@
-package com.permissionlib.util; /**
+package com.permission.util; /**
  *
  */
 
-import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -15,9 +14,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.Toast;
 
-import com.caifu.common.permission.Constant;
-import com.caifu.common.permission.PermissionCallBack;
-import com.permissionlib.R;
+import com.cf.common.permission.Constant;
+import com.cf.common.permission.PermissionCallBack;
+import com.permission.R;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.permissionlib.util;
+package com.permission.util;
 
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
@@ -11,8 +11,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 
-import com.caifu.common.permission.Constant;
-import com.permissionlib.R;
+import com.cf.common.permission.Constant;
+import com.permission.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

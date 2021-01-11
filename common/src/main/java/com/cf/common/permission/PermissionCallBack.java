@@ -1,4 +1,4 @@
-package com.caifu.common.permission;
+package com.cf.common.permission;
 
 public interface PermissionCallBack {
 
