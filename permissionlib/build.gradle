@@ -19,6 +19,6 @@ android {
 
 dependencies {
     implementation project(path: ':common')
-    implementation rootProject.ext.autoService
+    api rootProject.ext.autoService
     annotationProcessor rootProject.ext.autoService
 }
