@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/PermissionManager.iml" filepath="$PROJECT_DIR$/.idea/PermissionManager.iml" group="PermissionManager" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PermissionManager-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PermissionManager-app.iml" group="PermissionManager/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/PermissionManager-common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/PermissionManager-common.iml" group="PermissionManager/common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/permissionlib/PermissionManager-permissionlib.iml" filepath="$PROJECT_DIR$/.idea/modules/permissionlib/PermissionManager-permissionlib.iml" group="PermissionManager/permissionlib" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="PermissionManager/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/common.iml" group="PermissionManager/common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-PermissionManager.iml" filepath="$PROJECT_DIR$/.idea/modules/github-PermissionManager.iml" group="PermissionManager" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/permissionlib/permissionlib.iml" filepath="$PROJECT_DIR$/.idea/modules/permissionlib/permissionlib.iml" group="PermissionManager/permissionlib" />
     </modules>
   </component>
