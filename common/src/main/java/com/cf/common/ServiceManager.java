@@ -4,10 +4,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ServiceLoader;
 
-public class ServiceManager {
+public final class ServiceManager {
 
     private static ServiceManager mInstance = new ServiceManager();
     private HashMap mServices = new HashMap();
+
+    private ServiceManager() {
+    }
 
     public static <T> T getServices(Class<T> clazz) {
         if (mInstance.mServices.containsKey(clazz)) {
