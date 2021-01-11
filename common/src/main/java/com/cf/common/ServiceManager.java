@@ -1,15 +1,26 @@
 package com.cf.common;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ServiceLoader;
 
 public class ServiceManager {
 
+    private static ServiceManager mInstance = new ServiceManager();
+    private HashMap mServices = new HashMap();
+
     public static <T> T getServices(Class<T> clazz) {
-        Iterator<T> iterator = ServiceLoader.load(clazz).iterator();
-        if (iterator != null && iterator.hasNext()) {
-            return iterator.next();
+        if (mInstance.mServices.containsKey(clazz)) {
+            return (T) mInstance.mServices.get(clazz);
         }
-        return null;
+        Iterator<T> iterator = ServiceLoader.load(clazz).iterator();
+        T service = null;
+        if (iterator != null && iterator.hasNext()) {
+            service = iterator.next();
+            if (service != null) {
+                mInstance.mServices.put(clazz, service);
+            }
+        }
+        return service;
     }
 }
