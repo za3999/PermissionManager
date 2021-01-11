@@ -15,6 +15,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.Toast;
 
+import com.caifu.common.permission.Constant;
+import com.caifu.common.permission.PermissionCallBack;
 import com.permissionlib.R;
 
 import java.io.File;
@@ -31,51 +33,7 @@ public final class AndroidMPermissionHelper {
 
     public static final String SECURITY_RESULT_ACTION = "security_result_action";
 
-    /**
-     * 麦克风权限
-     */
-    public static final String PERMISSION_MICROPHONE = Manifest.permission.RECORD_AUDIO;
 
-    /**
-     * 传感器权限
-     */
-    public static final String PERMISSION_SENSORS = Manifest.permission.BODY_SENSORS;
-
-    /**
-     * 日历权限
-     */
-    public static final String PERMISSION_CALENDAR = Manifest.permission.WRITE_CALENDAR;
-
-    /**
-     * 访问摄像头权限组
-     */
-    public static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
-
-    /**
-     * 访问通讯录权限组
-     */
-    public static final String PERMISSION_GET_ACCOUNTS = Manifest.permission.GET_ACCOUNTS;
-
-    /**
-     * 读取电话状态权限组
-     */
-    public static final String PERMISSION_PHONE_STATE = Manifest.permission.READ_PHONE_STATE;
-
-    /**
-     * 读取位置信息权限组
-     */
-    public static final String PERMISSION_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
-
-    /**
-     * 发送短信、访问短信权限组
-     */
-    public static final String PERMISSION_SMS = Manifest.permission.READ_SMS;
-
-    /**
-     * 使用外置存储权限组
-     */
-
-    public static final String PERMISSION_STORAGE = Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
     /**
      * 带回调的权限检查
@@ -119,11 +77,11 @@ public final class AndroidMPermissionHelper {
     public static ArrayList<String> getNotGrantedPermission(Context context,String[] permissions, int[] grantResults) {
         ArrayList<String> permissionList = new ArrayList<>();
         for (int i = 0; i < grantResults.length; i++) {
-            if (permissions[i].equals(AndroidMPermissionHelper.PERMISSION_CAMERA)) {
+            if (permissions[i].equals(Constant.PERMISSION_CAMERA)) {
                 if (grantResults[i] != PackageManager.PERMISSION_GRANTED || !isCameraReady()) {
                     permissionList.add(permissions[i]);
                 }
-            } else if (permissions[i].equals(AndroidMPermissionHelper.PERMISSION_MICROPHONE)) {
+            } else if (permissions[i].equals(Constant.PERMISSION_MICROPHONE)) {
                 if (grantResults[i] != PackageManager.PERMISSION_GRANTED || !isRecorderReady(context)) {
                     permissionList.add(permissions[i]);
                 }
@@ -144,11 +102,11 @@ public final class AndroidMPermissionHelper {
      */
     public static boolean isAllPermissionGranted(Context context, String... permissions) {
         for (int i = 0; i < permissions.length; i++) {
-            if (permissions[i].equals(AndroidMPermissionHelper.PERMISSION_CAMERA)) {
+            if (permissions[i].equals(Constant.PERMISSION_CAMERA)) {
                 if (ActivityCompat.checkSelfPermission(context, permissions[i]) != PackageManager.PERMISSION_GRANTED || !isCameraReady()) {
                     return false;
                 }
-            } else if (permissions[i].equals(AndroidMPermissionHelper.PERMISSION_MICROPHONE)) {
+            } else if (permissions[i].equals(Constant.PERMISSION_MICROPHONE)) {
                 if (ActivityCompat.checkSelfPermission(context, permissions[i]) != PackageManager.PERMISSION_GRANTED || !isRecorderReady(context)) {
                     return false;
                 }
@@ -166,11 +124,11 @@ public final class AndroidMPermissionHelper {
      */
     public static boolean isAllPermissionGranted(Context context,String[] permissions, int[] grantResults) {
         for (int i = 0; i < grantResults.length; i++) {
-            if (permissions[i].equals(AndroidMPermissionHelper.PERMISSION_CAMERA)) {
+            if (permissions[i].equals(Constant.PERMISSION_CAMERA)) {
                 if (grantResults[i] != PackageManager.PERMISSION_GRANTED || !isCameraReady()) {
                     return false;
                 }
-            } else if (permissions[i].equals(AndroidMPermissionHelper.PERMISSION_MICROPHONE)) {
+            } else if (permissions[i].equals(Constant.PERMISSION_MICROPHONE)) {
                 if (grantResults[i] != PackageManager.PERMISSION_GRANTED || !isRecorderReady(context)) {
                     return false;
                 }
@@ -244,11 +202,11 @@ public final class AndroidMPermissionHelper {
     private static String[] getNotGrantedPermission(Context context, String... permissions) {
         ArrayList<String> permissionList = new ArrayList<String>();
         for (int i = 0; i < permissions.length; i++) {
-            if (permissions[i].equals(AndroidMPermissionHelper.PERMISSION_CAMERA)) {
+            if (permissions[i].equals(Constant.PERMISSION_CAMERA)) {
                 if (ActivityCompat.checkSelfPermission(context, permissions[i]) != PackageManager.PERMISSION_GRANTED || !isCameraReady()) {
                     permissionList.add(permissions[i]);
                 }
-            } else if (permissions[i].equals(AndroidMPermissionHelper.PERMISSION_MICROPHONE)) {
+            } else if (permissions[i].equals(Constant.PERMISSION_MICROPHONE)) {
                 if (ActivityCompat.checkSelfPermission(context, permissions[i]) != PackageManager.PERMISSION_GRANTED || !isRecorderReady(context)) {
                     permissionList.add(permissions[i]);
                 }
@@ -306,12 +264,6 @@ public final class AndroidMPermissionHelper {
         return isRecorderReady;
     }
 
-    public interface PermissionCallBack {
 
-        void onGranted();
-
-        void onDenied();
-
-    }
 
 }

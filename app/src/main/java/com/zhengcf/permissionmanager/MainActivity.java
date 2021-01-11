@@ -5,13 +5,16 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.permissionlib.util.AndroidMPermissionHelper;
+import com.caifu.common.ServiceManager;
+import com.caifu.common.permission.Constant;
+import com.caifu.common.permission.IPermissionService;
+import com.caifu.common.permission.PermissionCallBack;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -61,7 +64,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        AndroidMPermissionHelper.checkPermission(this, new AndroidMPermissionHelper.PermissionCallBack() {
+        IPermissionService permissionService = ServiceManager.getServices(IPermissionService.class);
+        if (permissionService == null) {
+            return;
+        }
+        permissionService.checkPermission(this, new PermissionCallBack() {
                     @Override
                     public void onGranted() {
                         Toast.makeText(MainActivity.this, "权限请求成功", Toast.LENGTH_SHORT).show();
@@ -71,9 +78,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onDenied() {
                         Toast.makeText(MainActivity.this, "权限请求失败", Toast.LENGTH_SHORT).show();
                     }
-                }, AndroidMPermissionHelper.PERMISSION_CAMERA,
-                AndroidMPermissionHelper.PERMISSION_PHONE_STATE,
-                AndroidMPermissionHelper.PERMISSION_GET_ACCOUNTS,
-                AndroidMPermissionHelper.PERMISSION_SMS);
+                }, Constant.PERMISSION_CAMERA,
+                Constant.PERMISSION_PHONE_STATE,
+                Constant.PERMISSION_GET_ACCOUNTS,
+                Constant.PERMISSION_SMS);
     }
 }

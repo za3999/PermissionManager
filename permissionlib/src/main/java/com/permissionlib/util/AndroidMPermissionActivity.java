@@ -11,6 +11,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 
+import com.caifu.common.permission.Constant;
 import com.permissionlib.R;
 
 import java.util.ArrayList;
@@ -118,15 +119,15 @@ public class AndroidMPermissionActivity extends AppCompatActivity {
      */
     private HashMap<String, String> initPermissionContent() {
         HashMap<String, String> permissionContent = new HashMap<>();
-        permissionContent.put(AndroidMPermissionHelper.PERMISSION_MICROPHONE, getString(R.string.str_permission_microphone));
-        permissionContent.put(AndroidMPermissionHelper.PERMISSION_SENSORS, getString(R.string.str_permission_sensors));
-        permissionContent.put(AndroidMPermissionHelper.PERMISSION_CALENDAR, getString(R.string.str_permission_calendar));
-        permissionContent.put(AndroidMPermissionHelper.PERMISSION_CAMERA, getString(R.string.str_permission_camera));
-        permissionContent.put(AndroidMPermissionHelper.PERMISSION_GET_ACCOUNTS, getString(R.string.str_permission_get_accounts));
-        permissionContent.put(AndroidMPermissionHelper.PERMISSION_PHONE_STATE, getString(R.string.str_permission_phone_state));
-        permissionContent.put(AndroidMPermissionHelper.PERMISSION_LOCATION, getString(R.string.str_permission_location));
-        permissionContent.put(AndroidMPermissionHelper.PERMISSION_SMS, getString(R.string.str_permission_sms));
-        permissionContent.put(AndroidMPermissionHelper.PERMISSION_STORAGE, getString(R.string.str_permission_storage));
+        permissionContent.put(Constant.PERMISSION_MICROPHONE, getString(R.string.str_permission_microphone));
+        permissionContent.put(Constant.PERMISSION_SENSORS, getString(R.string.str_permission_sensors));
+        permissionContent.put(Constant.PERMISSION_CALENDAR, getString(R.string.str_permission_calendar));
+        permissionContent.put(Constant.PERMISSION_CAMERA, getString(R.string.str_permission_camera));
+        permissionContent.put(Constant.PERMISSION_GET_ACCOUNTS, getString(R.string.str_permission_get_accounts));
+        permissionContent.put(Constant.PERMISSION_PHONE_STATE, getString(R.string.str_permission_phone_state));
+        permissionContent.put(Constant.PERMISSION_LOCATION, getString(R.string.str_permission_location));
+        permissionContent.put(Constant.PERMISSION_SMS, getString(R.string.str_permission_sms));
+        permissionContent.put(Constant.PERMISSION_STORAGE, getString(R.string.str_permission_storage));
         return permissionContent;
     }
 }
