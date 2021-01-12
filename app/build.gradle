@@ -29,4 +29,5 @@ dependencies {
     implementation rootProject.ext.constraintlayout
     implementation rootProject.ext.material
     implementation project(':common')
+    implementation project(':permissionlib')
 }
