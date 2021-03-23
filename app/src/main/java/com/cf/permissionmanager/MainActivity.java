@@ -7,7 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cf.common.ServiceManager;
-import com.cf.common.permission.Constant;
+import com.permission.util.Constant;
 import com.cf.common.permission.IPermissionService;
 import com.cf.common.permission.PermissionCallBack;
 

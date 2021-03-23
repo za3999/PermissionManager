@@ -1,4 +1,4 @@
-package com.cf.common.permission;
+package com.permission.util;
 
 import android.Manifest;
 

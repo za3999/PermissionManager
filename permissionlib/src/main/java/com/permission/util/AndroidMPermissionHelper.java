@@ -14,7 +14,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.widget.Toast;
 
-import com.cf.common.permission.Constant;
 import com.cf.common.permission.PermissionCallBack;
 import com.permission.R;
 

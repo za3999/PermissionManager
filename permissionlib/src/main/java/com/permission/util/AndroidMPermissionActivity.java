@@ -11,7 +11,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import com.cf.common.permission.Constant;
 import com.permission.R;
 
 import java.util.ArrayList;
