@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
+
 import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.appcompat.app.AlertDialog;
@@ -15,6 +17,9 @@ import com.permission.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -102,15 +107,37 @@ public class AndroidMPermissionActivity extends AppCompatActivity {
      * @return
      */
     private String getPermissionDialogContent(ArrayList<String> permissions) {
+        if (permissions == null) {
+            return "";
+        }
         HashMap<String, String> permissionContent = initPermissionContent();
+        boolean isStorePermission = false;
+        if (permissions.size() == 1) {
+            isStorePermission = permissions.contains(Constant.PERMISSION_STORAGE) || permissions.contains(Constant.PERMISSION_READ_STORAGE);
+        } else if (permissions.size() == 2) {
+            isStorePermission = permissions.contains(Constant.PERMISSION_STORAGE) && permissions.contains(Constant.PERMISSION_READ_STORAGE);
+        }
+        if (isStorePermission) {
+            return getString(R.string.str_permission_storage);
+        }
+        Set<String> permissionNames = new HashSet<>();
+        for (String permission : permissions) {
+            String permissionName = permissionContent.get(permission);
+            if (TextUtils.isEmpty(permissionName)) {
+                permissionName = getString(R.string.str_undef);
+            }
+            permissionNames.add(permissionName);
+        }
+        List<String> permissionList = new ArrayList<>(permissionNames);
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < permissions.size(); i++) {
-            builder.append(permissionContent.get(permissions.get(i)));
-            if (i < permissions.size() - 1) {
-                builder.append(getString(R.string.str_and));
+        for (int i = 0; i < permissionList.size(); i++) {
+            String permissionName = permissionList.get(i);
+            builder.append(permissionName);
+            if (i < permissionList.size() - 1) {
+                builder.append(",");
             }
         }
-        return builder.toString();
+        return getResources().getString(R.string.str_setting_open_permission, builder.toString());
     }
 
     /**
@@ -127,6 +154,9 @@ public class AndroidMPermissionActivity extends AppCompatActivity {
         permissionContent.put(Constant.PERMISSION_LOCATION, getString(R.string.str_permission_location));
         permissionContent.put(Constant.PERMISSION_SMS, getString(R.string.str_permission_sms));
         permissionContent.put(Constant.PERMISSION_STORAGE, getString(R.string.str_permission_storage));
+        permissionContent.put(Constant.PERMISSION_BLUETOOTH_SCAN, getString(R.string.str_permission_bluetooth));
+        permissionContent.put(Constant.PERMISSION_BLUETOOTH_CONNECT, getString(R.string.str_permission_bluetooth));
+        permissionContent.put(Constant.PERMISSION_NEARBY_WIFI_DEVICES, getString(R.string.str_permission_bluetooth));
         return permissionContent;
     }
 }

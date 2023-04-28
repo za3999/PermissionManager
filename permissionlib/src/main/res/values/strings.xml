@@ -15,7 +15,8 @@
     <string name="str_permission_location">\t位置权限\t</string>
     <string name="str_permission_sms">\t短信权限\t</string>
     <string name="str_permission_storage">\t存储权限\t</string>
+    <string name="str_permission_bluetooth">附近的设备权限</string>
     <string name="str_and">和</string>
     <string name="str_request_permission">请求权限</string>
-
+    <string name="str_undef">未知</string>
 </resources>
