@@ -157,6 +157,10 @@ public class AndroidMPermissionActivity extends AppCompatActivity {
         permissionContent.put(Constant.PERMISSION_BLUETOOTH_SCAN, getString(R.string.str_permission_bluetooth));
         permissionContent.put(Constant.PERMISSION_BLUETOOTH_CONNECT, getString(R.string.str_permission_bluetooth));
         permissionContent.put(Constant.PERMISSION_NEARBY_WIFI_DEVICES, getString(R.string.str_permission_bluetooth));
+        permissionContent.put(Constant.PERMISSION_POST_NOTIFICATIONS, getString(R.string.str_permission_notification));
+        permissionContent.put(Constant.PERMISSION_READ_MEDIA_AUDIO, getString(R.string.str_read_media_aural));
+        permissionContent.put(Constant.PERMISSION_READ_MEDIA_IMAGES, getString(R.string.str_read_media_visual));
+        permissionContent.put(Constant.PERMISSION_READ_MEDIA_VIDEO, getString(R.string.str_read_media_visual));
         return permissionContent;
     }
 }
