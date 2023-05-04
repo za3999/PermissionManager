@@ -7,7 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cf.common.ServiceManager;
-import com.permission.util.Constant;
+import com.permission.util.AndroidMPermissionHelper;
 import com.cf.common.permission.IPermissionService;
 import com.cf.common.permission.PermissionCallBack;
 
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         }
         permissionService.checkPermission(this, new PermissionCallBack() {
                     @Override
-                    public void onGranted() {
+                    public void onGranted(boolean alreadyExist) {
                         Toast.makeText(MainActivity.this, "权限请求成功", Toast.LENGTH_SHORT).show();
                     }
 
@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onDenied() {
                         Toast.makeText(MainActivity.this, "权限请求失败", Toast.LENGTH_SHORT).show();
                     }
-                }, Constant.PERMISSION_CAMERA,
-                Constant.PERMISSION_PHONE_STATE,
-                Constant.PERMISSION_GET_ACCOUNTS,
-                Constant.PERMISSION_SMS);
+                }, AndroidMPermissionHelper.PERMISSION_CAMERA,
+                AndroidMPermissionHelper.PERMISSION_PHONE_STATE,
+                AndroidMPermissionHelper.PERMISSION_GET_ACCOUNTS,
+                AndroidMPermissionHelper.PERMISSION_SMS);
     }
 }

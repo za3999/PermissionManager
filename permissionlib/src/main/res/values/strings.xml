@@ -15,11 +15,14 @@
     <string name="str_permission_location">\t位置权限\t</string>
     <string name="str_permission_sms">\t短信权限\t</string>
     <string name="str_permission_storage">\t存储权限\t</string>
+    <string name="str_write_permission_storage">写存储权限</string>
+    <string name="str_read_permission_storage">\读存储权限</string>
     <string name="str_permission_bluetooth">附近的设备权限</string>
     <string name="str_permission_notification">系统通知权限</string>
-    <string name="str_read_media_aural">获取音频文件</string>
-    <string name="str_read_media_visual">获取视频文件</string>
+    <string name="read_media_aural">音乐和音频</string>
+    <string name="read_media_visual">照片和视频</string>
     <string name="str_and">和</string>
     <string name="str_request_permission">请求权限</string>
     <string name="str_undef">未知</string>
+    <string name="str_permission_store">为确保您可以使用 App 访问用户头像和聊天媒体文件，App 需要必要的读写访问权限。</string>
 </resources>

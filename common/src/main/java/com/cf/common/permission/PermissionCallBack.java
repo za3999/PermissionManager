@@ -2,7 +2,7 @@ package com.cf.common.permission;
 
 public interface PermissionCallBack {
 
-    void onGranted();
+    void onGranted(boolean alreadyExist);
 
     void onDenied();
 
